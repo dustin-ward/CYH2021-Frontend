@@ -2,6 +2,7 @@ import React, { useState } from "react";
 //can be replaced with other packages later:
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import axios from 'axios';
 import "./Login.css";
 
 export default function Login() {
@@ -13,6 +14,18 @@ export default function Login() {
   }
 
   function handleSubmit(event) {
+    console.log(email, password);
+    axios.post('http://localhost:8080/login', {
+      email: email,
+      password: password
+    })
+    .then(function (response) {
+      console.log(response.data.access_token);
+      //localStorage.setItem(response.data["access_token"])
+    })
+    .catch(function (error) {
+      alert(error);
+    });
     event.preventDefault();
   }
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap/Nav";
 import About from './About';
 import Home from "./Home";
 import Contact from "./Contact";
@@ -45,38 +45,50 @@ class Clock extends React.Component {
   }
 }
 
-function Navigation() {
+export default function Navigation() {
   return (
     <div className="Navigation">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <nav collapseOnSelect bg="dark" expand="md" className="mb-3">
         <div class="container">
-          <Link class="navbar-brand" to="/">
-            React Multi-Page Website
+        <Link to ="/">
+          Home
+        </Link> |
+          <Link to="/about">
+            About
+          </Link> |
+          <Link to="/contact">
+            Contact
           </Link>
-
-          <div>
-            <ul class="navbar-nav ml-auto">
-              <li>
-                <Link to="/">
-                  Home <Clock />
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link class="nav-link" to="/contact">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
     </div>
   );
 }
 
-export default Navigation;
+//  <nav class="navbar navbar-expand navbar-dark bg-dark">
+//  <div class="container">
+//    <Link class="navbar-brand" to="/">
+//      React Multi-Page Website
+//    </Link>
+//  </Navbar.Collapse>
+//    <div>
+//      <ul class="navbar-nav ml-auto">
+//        <li>
+//          <Link to="/">
+//            Home <Clock />
+//          </Link>
+//        </li>
+//        <li>
+//          <Link to="/about">
+//            About
+//          </Link>
+//        </li>
+//        <li>
+//          <Link class="nav-link" to="/contact">
+//            Contact
+//          </Link>
+//        </li>
+//      </ul>
+//    </div>
+//  </div>
+// </nav>}}

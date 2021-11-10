@@ -1,13 +1,11 @@
 import React from "react";
 
-export default function Home() {
+function Home() {
   return (
-    <div className="home">
+    <div className="Home">
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
-            <img
-            />
           </div>
           <div class="col-lg-5">
             <h1 >Home</h1>
@@ -23,3 +21,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

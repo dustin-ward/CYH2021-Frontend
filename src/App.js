@@ -25,7 +25,7 @@
 // export default App;
 import React from 'react';
 import Routes1 from "./Routes";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navigation, Home, About, Contact } from "./components";
 import Login from "./containers/Login";
 
@@ -35,11 +35,10 @@ import Login from "./containers/Login";
 function App() {
   return (
     //<div className="App">
-      <Router>
-        <Navigation>
-          <Routes1 />
-        </Navigation>
-      </Router>
+      <BrowserRouter>
+        <Navigation />
+        <Routes1 />
+      </BrowserRouter>
     //</div>
   );
 }
