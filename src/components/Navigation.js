@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
 import { Nav } from "react-bootstrap/Nav";
 import About from './About';
 import Home from "./Home";
@@ -44,51 +44,41 @@ class Clock extends React.Component {
       );
   }
 }
-
+//collapseOnSelect
 export default function Navigation() {
+  const location = useLocation();
+  const { pathname } = location;
+  const splitLocation = pathname.split("/");
+
   return (
     <div className="Navigation">
-      <nav collapseOnSelect bg="dark" expand="md" className="mb-3">
+      <nav class="navbar navbar-expand navbar-dark bg-dark" >
+        <Link class="navbar-brand" to="/">
+      {/*could add <img src> here*/}
+          Moodz
+        </Link>
         <div class="container">
-        <Link to ="/">
-          Home
-        </Link> |
-          <Link to="/about">
-            About
-          </Link> |
-          <Link to="/contact">
-            Contact
+          <ul class="navbar-nav mr-auto">
+            /<li className={splitLocation[1] === "" ? "active" : ""}>
+            <Link class="nav-item nav-link" to ="/">
+              Home
+            </Link>
+          </li>
+          |
+            <li className={splitLocation[1] === "about" ? "active" : ""}>
+            <Link class="nav-item nav-link" to="/about">
+              About
+            </Link> </li> |
+            <li className={splitLocation[1] === "contact" ? "active" : ""}>
+            <Link class="nav-item nav-link" to="/contact">
+              Contact
+            </Link> </li>
+          </ul>
+          <Link class="nav-item nav-link" to="/Login">
+            Login!
           </Link>
         </div>
       </nav>
     </div>
   );
 }
-
-//  <nav class="navbar navbar-expand navbar-dark bg-dark">
-//  <div class="container">
-//    <Link class="navbar-brand" to="/">
-//      React Multi-Page Website
-//    </Link>
-//  </Navbar.Collapse>
-//    <div>
-//      <ul class="navbar-nav ml-auto">
-//        <li>
-//          <Link to="/">
-//            Home <Clock />
-//          </Link>
-//        </li>
-//        <li>
-//          <Link to="/about">
-//            About
-//          </Link>
-//        </li>
-//        <li>
-//          <Link class="nav-link" to="/contact">
-//            Contact
-//          </Link>
-//        </li>
-//      </ul>
-//    </div>
-//  </div>
-// </nav>}}

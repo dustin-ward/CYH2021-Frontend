@@ -33,6 +33,7 @@ import Login from "./containers/Login";
 
 
 function App() {
+  const storedJwt = localStorage.getItem('token'); //check if set to null
   return (
     //<div className="App">
       <BrowserRouter>
