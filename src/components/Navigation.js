@@ -1,9 +1,7 @@
 import React from "react";
-import { Link, useLocation, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Nav } from "react-bootstrap/Nav";
-import About from './About';
-import Home from "./Home";
-import Contact from "./Contact";
+import LogoutButton from "./LogoutButton";
 
 // const routes = {
 //   "/about": () => <About />,
@@ -74,9 +72,7 @@ export default function Navigation() {
               Contact
             </Link> </li>
           </ul>
-          <Link class="nav-item nav-link" to="/Login">
-            Login!
-          </Link>
+          <LogoutButton />
         </div>
       </nav>
     </div>

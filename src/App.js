@@ -25,15 +25,13 @@
 // export default App;
 import React from 'react';
 import Routes1 from "./Routes";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Navigation, Home, About, Contact } from "./components";
-import Login from "./containers/Login";
-
-
-
+import { BrowserRouter } from "react-router-dom";
+//import { Navigation, Home, About, Contact } from "./components";
+import { Navigation } from "./components";
+//import Login from "./containers/Login";
 
 function App() {
-  const storedJwt = localStorage.getItem('token'); //check if set to null
+
   return (
     //<div className="App">
       <BrowserRouter>

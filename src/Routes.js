@@ -6,6 +6,7 @@ import User from "./containers/User.js";
 import OwnUserProfile from "./containers/OwnUserProfile";
 import Login from "./containers/Login";
 import Errors from "./containers/Errors";
+import AuthStatus from "./containers/AuthStatus";
 
 import { Link, Outlet } from "react-router-dom";
 
@@ -17,21 +18,23 @@ export default function Routes1() {
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route exact path="login/*"  element={<Login />} />
-        <Route
-          path="/user"
-          element={
-            <User>
-              <UserProfile />
-            </User>
-          }
-        />
-        //<Route path=":id" element={<UserProfile />} />
-        // <Route path="me" element={<OwnUserProfile />} />
+      <Route
+        path="user"
+        element={
+          <User>
+            <UserProfile />
+          </User>
+        }
+      />
+      //apples
+      <Route path= "logout" element={<AuthStatus />} />
       <Route path= "*" element={<Errors />} />
     </Routes>
   );
 }
 
+//<Route path=":id" element={<UserProfile />} />
+// <Route path="me" element={<OwnUserProfile />} />
 function UserRoutes() {
   return (
     <div>
