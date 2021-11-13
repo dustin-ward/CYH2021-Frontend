@@ -1,34 +1,146 @@
+import axios from "axios";
 import React, {useState} from "react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 
-function Home() {
-  const token = localStorage.getItem('token'); //check if set to null
-  const [calValue, setCalValue] = useState(new Date());
+// function GetDates() {
+//   if(token != null) {
+//     axios({
+//       "url": "http://localhost:3000",
+//       "method": "GET",
+//       "headers": {
+//         "Authorization": token
+//       }
+//     })
+//     .then(function (res) {
+//       console.log(res.data)
+//     })
+//     .catch(function (err) {
+//       console.log(err)
+//     })
+//   }
+// }
 
-  return (
+// function Home() {
+//   const token = localStorage.getItem('token'); //check if set to null
+//   const [calValue, setCalValue] = useState(new Date());
+
+//   return (
+//     <div className="Home">
+//       <div class="container">
+//         <div class="row align-items-center my-5">
+//           {token != null && 
+//             <div>
+//               <div class="col-lg-7">
+//                 <Calendar onChange={setCalValue} value={calValue}/>
+//               </div>
+//               <div class="col-lg-5">
+//               </div>
+//             </div>
+//           }
+//           {token == null &&
+//             <div>
+//               <div class="col-lg-7">
+//               </div>
+//               <div class="col-lg-5">
+//                 <h1 >Home </h1> {token}
+//                 <p>
+
+//                   Lorem Ipsum is simply dummy text of the printing and typesetting
+//                   industry. Lorem Ipsum has been the industry's standard dummy text
+//                   ever since the 1500s, when an unknown printer took a galley of
+//                   type and scrambled it to make a type specimen book.
+//                 </p>
+//               </div>
+//             </div>
+//           }
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Home;
+
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      person: [],
+      token: localStorage.getItem('token'),
+      days: [],
+      date: new Date()
+    };
+    // this.token = localStorage.getItem('token')
+  }
+
+  componentDidMount() {
+    this.state.token = localStorage.getItem('token')
+    if(this.state.token != null) {
+      this.getDays();
+    }
+    console.log(this.state)
+  }
+
+  getDays() {
+    console.log("Requesting days with token: "+this.state.token)
+    let token = this.state.token
+    axios({
+      method: 'get',
+      url: 'http://localhost:8080/days',
+      headers: {
+        "Authorization": `Bearer ${this.state.token}`
+      }
+    })
+    .then(function (res) {
+      console.log(res.data)
+      let days = res.data.days
+      this.setState({days})
+    })
+    .catch(function (err) {
+      console.log(err)
+    })
+  }
+
+  onChange = date => {
+    this.setState({ date })
+    console.log(this.state)
+  }
+  
+  render() {
+    return (
     <div className="Home">
       <div class="container">
         <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            {token != null && 
-              <Calendar onChange={setCalValue} value={calValue}/>
-            }
-          </div>
-          <div class="col-lg-5">
-            <h1 >Home </h1> {token}
-            <p>
+          {this.state.token != null && 
+            <div>
+              <div class="col-lg-7">
+                <Calendar onChange={this.onDateChange} value={this.state.calVal}/>
+              </div>
+              <div class="col-lg-5">
+              </div>
+            </div>
+          }
+          {this.state.token == null &&
+            <div>
+              <div class="col-lg-7">
+              </div>
+              <div class="col-lg-5">
+                <h1 >Home </h1> {this.state.token}
+                <p>
 
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy text
+                  ever since the 1500s, when an unknown printer took a galley of
+                  type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+          }
         </div>
       </div>
     </div>
-  );
+    )
+  }
 }
-
-export default Home;

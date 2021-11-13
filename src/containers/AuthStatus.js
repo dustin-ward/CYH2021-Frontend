@@ -21,7 +21,7 @@ export default function AuthStatus() {
             method: 'get',
             url: 'http://localhost:8080/logout',
             headers: {
-              "Authorization": token,
+              "Authorization": `Bearer ${token}`
             }
           })
             .then(function (res) {
