@@ -1,11 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
 
 // function()
 
 export default function AuthStatus() {
-  let navigate = useNavigate();
   let token = localStorage.getItem('token');
 
   if (token === null) {

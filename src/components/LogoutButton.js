@@ -1,18 +1,16 @@
-import React, { useNavigate } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-import AuthStatus from "../containers/AuthStatus";
 
 function LogoutButton() {
   let token = localStorage.getItem('token');
   if(token === null) {
     return (
-      <Link class="nav-item nav-link" to="/Login">
+      <Link className="nav-item nav-link" to="/Login">
         Login!
       </Link>
     );
   } return (
-    <Link class = "nav-item nav-link" to="/Logout" >
+    <Link className = "nav-item nav-link" to="/Logout" >
       looogouut
     </Link>
   );

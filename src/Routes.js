@@ -3,13 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import { Home, Contact, About } from "./components";
 import UserProfile from "./components/UserProfile";
 import User from "./containers/User.js";
-import OwnUserProfile from "./containers/OwnUserProfile";
 import Login from "./containers/Login";
 import Errors from "./containers/Errors";
 import AuthStatus from "./containers/AuthStatus";
-
-import { Link, Outlet } from "react-router-dom";
-
 
 export default function Routes1() {
   return (
@@ -26,7 +22,6 @@ export default function Routes1() {
           </User>
         }
       />
-      //apples
       <Route path= "logout" element={<AuthStatus />} />
       <Route path= "*" element={<Errors />} />
     </Routes>
@@ -35,11 +30,11 @@ export default function Routes1() {
 
 //<Route path=":id" element={<UserProfile />} />
 // <Route path="me" element={<OwnUserProfile />} />
-function UserRoutes() {
-  return (
-    <div>
-        <Link to="me">My Profile</Link>
-        <Outlet />
-    </div>
-  );
-}
+// function UserRoutes() {
+//   return (
+//     <div>
+//         <Link to="me">My Profile</Link>
+//         <Outlet />
+//     </div>
+//   );
+// }

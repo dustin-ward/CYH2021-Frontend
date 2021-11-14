@@ -52,13 +52,13 @@ export default function Login() {
   function Alert() {
     if (err === 403) {
       return (
-        <div class="alert alert-warning" role="alert">
+        <div className="alert alert-warning" role="alert">
         <p> Wrong password! </p>
         </div>
       );
     } else if(err === 404) {
       return (
-        <div class="alert alert-warning" role="alert">
+        <div className="alert alert-warning" role="alert">
         <p> This account does not exist! </p>
         </div>
       );

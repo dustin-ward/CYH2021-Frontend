@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 
-import { Navigation, Home, About, Contact } from "./components";
 import App from './App';
-import Routes1 from "./Routes";
 import "bootstrap/dist/css/bootstrap.css";
 //import reportWebVitals from './reportWebVitals';
 
