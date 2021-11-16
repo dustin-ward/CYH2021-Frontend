@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, Contact, About } from "./components";
+import { HomePage, Home, Contact, About } from "./components";
 import UserProfile from "./components/UserProfile";
 import User from "./containers/User.js";
 import Login from "./containers/Login";
@@ -10,7 +10,7 @@ import AuthStatus from "./containers/AuthStatus";
 export default function Routes1() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route exact path="login/*"  element={<Login />} />
