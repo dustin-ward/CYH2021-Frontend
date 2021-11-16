@@ -11,13 +11,14 @@ export default function Home() {
 
   const [token, setToken] = useState(localStorage.getItem('token'));
   useEffect(() => {
+    // Grab token from localstorage
     setToken(localStorage.getItem('token'));
   }, [token]);
 
   const [days, setDays] = useState([]);
   useEffect(() => {
     if(token !== null) {
-      console.log("Requesting days with token: "+token)
+      // Make API call to get all days for user
       axios({
         method: 'get',
         url: 'http://localhost:8080/days',
@@ -40,15 +41,18 @@ export default function Home() {
     }
   }, [token, navigate]);
 
+  // Convert MySQL date string to JS date obj
   function parseISOString(s) {
     var b = s.split(/\D+/);
     return new Date(Date.UTC(b[0], --b[1], ++b[2], b[3], b[4], b[5], b[6]));
   }
 
+  // Check equality between dates (ignoring time)
   function compDates(a, b) {
     return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
   }
 
+  // Find date in array (if exists) that matches selected calendar value
   function getDateObj() {
     for(let i=0; i<days.length; i++) {
       if(compDates(parseISOString(days[i].day.calendar_date), calVal)) {
@@ -65,6 +69,7 @@ export default function Home() {
     }
   }
 
+  // Change display if token === null
   return (
     <div className="Home">
       <div className="container">
