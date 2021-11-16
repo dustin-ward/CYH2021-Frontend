@@ -15,6 +15,8 @@
     "react-router": "^6.0.2",
     "react-router-dom": "^6.0.1",
     "react-scripts": "4.0.3",
+    "react-select": "^5.2.1",
+    "react-select-plus": "^1.0.0-rc.3.patch12",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

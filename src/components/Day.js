@@ -1,4 +1,5 @@
 import React from "react";
+import Moods from "./Moods.js";
 
 export default class Day extends React.Component {
     constructor(props) {
@@ -25,9 +26,10 @@ export default class Day extends React.Component {
             <div>
                 <h2>{this.state.day.calendar_date}</h2>
                 <h3>Moods</h3>
-                {this.state.moods.map(function(mood, i){
-                    return (<p>{mood.mood}</p>);
-                })}
+                <Moods day={this.props.day.day} moods={this.props.day.moods} tasks={this.props.day.tasks}/>
+                {/* {this.state.moods.map(function(mood, i){
+                    return <Mood mood={mood.mood}/>;
+                })} */}
                 <h3>Tasks</h3>
                 {this.state.tasks.map(function(task, i){
                     return (

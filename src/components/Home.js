@@ -74,18 +74,18 @@ export default function Home() {
     <div className="Home">
       <div className="container">
         <div >
-        <div className="row align-items-center my-5">
-              <div className="col-lg-2">
-                <p>Left Menu</p>
-              </div>
-              <div className="col-lg-6">
-                <Calendar onChange={setCalVal} value={calVal}/>
-              </div>
-              <div className="col-lg-2">
-                <h2>Current Date</h2>
-                <Day day={getDateObj()}/>
-              </div>
+          <div className="row align-items-center my-5">
+            <div className="col-lg-2">
+              <p>Left Menu</p>
             </div>
+            <div className="col-lg-6">
+              <Calendar onChange={setCalVal} value={calVal}/>
+            </div>
+            <div className="col-lg-2">
+              <h2>Current Date</h2>
+              <Day day={getDateObj()}/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
