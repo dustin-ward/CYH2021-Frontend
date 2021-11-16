@@ -3,17 +3,24 @@ import React from "react";
 export default class Day extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             day: props.day.day,
             tasks: props.day.tasks,
             moods: props.day.moods
         }
-        console.log("State:", this.state)
+    }
+
+    componentDidUpdate() {
+        if(this.state.day.id !== this.props.day.day.id) {
+            this.setState({
+                day: this.props.day.day,
+                tasks: this.props.day.tasks,
+                moods: this.props.day.moods
+            })
+        }
     }
 
     render() {
-        console.log("State:", this.state)
         return (
             <div>
                 <h2>{this.state.day.calendar_date}</h2>
