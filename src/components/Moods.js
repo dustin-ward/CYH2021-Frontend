@@ -1,13 +1,15 @@
-import { PROPERTY_TYPES } from "@babel/types";
 import axios from "axios";
+import chroma from "chroma-js"
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import Select, { StylesConfig } from 'react-select';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 import moodOptions from "./MoodOptions.js"
 import usePrevious from "./usePrevious.js";
 
 export default function Moods(props) {
     let navigate = useNavigate();
+    const animatedComponents = makeAnimated();
     const [curMoods, setCurMoods] = useState([])
     const [token, setToken] = useState(localStorage.getItem('token'))
     const prevDay = usePrevious(props.day)
@@ -84,6 +86,19 @@ export default function Moods(props) {
         });
     }
 
+    const colourStyles = {
+        // control: styles => ({ ...styles, backgroundColor: 'white' }),
+        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+          const color = chroma(data.color);
+          return {
+            ...styles,
+            backgroundColor: isDisabled ? 'red' : color,
+            // color: "#FFF",
+            cursor: isDisabled ? 'not-allowed' : 'default',
+          };
+        },
+      };
+
     return (
         <div className='moods'>
             <p>Value: {sumMoods()}</p>
@@ -93,7 +108,8 @@ export default function Moods(props) {
                 value={curMoods}
                 options={moodOptions}
                 onChange={setCurMoods}
-                // styles={colourStyles}
+                components={animatedComponents}
+                styles={colourStyles}
             />
             <button onClick={postChanges}>
                 Save
