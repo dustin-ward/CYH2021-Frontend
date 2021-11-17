@@ -82,31 +82,31 @@ export default function Home() {
       if(compDates(parseISOString(day.day.calendar_date), date)){
         if(day.day.value >= 2) {
           console.log("returning 1")
-          c = 'moodPos3' 
+          c = 'moodPos3'
           return
         } else if(day.day.value >= 1) {
           console.log("returning 2")
-          c = 'moodPos2' 
+          c = 'moodPos2'
           return
         } else if(day.day.value > 0) {
           console.log("returning 3")
-          c = 'moodPos1' 
+          c = 'moodPos1'
           return
         } else if(day.day.value === 0) {
           console.log("returning 4")
-          c = 'moodNtrl' 
+          c = 'moodNtrl'
           return
         } else if(day.day.value > -0.99) {
           console.log("returning 5")
-          c = 'moodNeg1' 
+          c = 'moodNeg1'
           return
         } else if(day.day.value > -1.99) {
           console.log("returning 6")
-          c = 'moodNeg2' 
+          c = 'moodNeg2'
           return
         } else {
           console.log("returning 7")
-          c = 'moodNeg3' 
+          c = 'moodNeg3'
           return
         }
       }
@@ -124,8 +124,8 @@ export default function Home() {
               <p>Left Menu</p>
             </div>
             <div className="col-lg-6">
-              <Calendar 
-                onChange={setCalVal} 
+              <Calendar
+                onChange={setCalVal}
                 value={calVal}
                 tileClassName={tileClassName}
               />

@@ -99,10 +99,10 @@
   padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
 }
 .react-calendar__month-view__days__day--weekend {
-  color: #2b2b2b;
+  /* color: #2b2b2b; */
 }
 .react-calendar__month-view__days__day--neighboringMonth {
-  color: #757575;
+  /* color: #757575; */
 }
 .react-calendar__year-view .react-calendar__tile,
 .react-calendar__decade-view .react-calendar__tile,
@@ -113,7 +113,6 @@
   max-width: 100%;
   text-align: center;
   padding: 0.75em 0.5em;
-  /* background: none; */
 }
 .react-calendar__tile:disabled {
   /* background-color: #f0f0f0; */
