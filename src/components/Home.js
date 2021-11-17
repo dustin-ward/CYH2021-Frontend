@@ -18,28 +18,32 @@ export default function Home() {
   const [days, setDays] = useState([]);
   useEffect(() => {
     if(token !== null) {
-      // Make API call to get all days for user
-      axios({
-        method: 'get',
-        url: 'http://localhost:8080/days',
-        headers: {
-          "Authorization": `Bearer ${token}`,
-        }
-      })
-      .then(res => {
-        console.log("Response:", res.data)
-        setDays(res.data.days)
-      })
-      .catch(err => {
-        console.log(err)
-        if(err.response.status === 401) {
-          localStorage.removeItem('token')
-          setToken(null)
-          navigate('/login', {replace: true})
-        }
-      });
+      getDays();
     }
   }, [token, navigate]);
+
+  function getDays() {
+    // Make API call to get all days for user
+    axios({
+      method: 'get',
+      url: 'http://localhost:8080/days',
+      headers: {
+        "Authorization": `Bearer ${token}`,
+      }
+    })
+    .then(res => {
+      console.log("Response:", res.data)
+      setDays(res.data.days)
+    })
+    .catch(err => {
+      console.log(err)
+      if(err.response.status === 401) {
+        localStorage.removeItem('token')
+        setToken(null)
+        navigate('/login', {replace: true})
+      }
+    });
+  }
 
   // Convert MySQL date string to JS date obj
   function parseISOString(s) {
@@ -62,7 +66,7 @@ export default function Home() {
     return {
       day: {
         id: 0,
-        calendar_date: "No data for this date",
+        calendar_date: calVal.toISOString(),
       },
       tasks: [],
       moods: [],
@@ -83,7 +87,7 @@ export default function Home() {
             </div>
             <div className="col-lg-2">
               <h2>Current Date</h2>
-              <Day day={getDateObj()}/>
+              <Day day={getDateObj} update={getDays}/>
             </div>
           </div>
         </div>
