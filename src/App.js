@@ -29,16 +29,17 @@ import { BrowserRouter } from "react-router-dom";
 //import { Navigation, Home, About, Contact } from "./components";
 import { Navigation } from "./components";
 //import Login from "./containers/Login";
+import './components/All.css';
 
 function App() {
 
   return (
-    //<div className="App">
+    <div className="App">
       <BrowserRouter>
         <Navigation />
         <Routes1 />
       </BrowserRouter>
-    //</div>
+     </div>
   );
 }
 

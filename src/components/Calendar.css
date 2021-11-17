@@ -26,12 +26,13 @@
   background-color: rgb(255, 97, 97);
 }
 
+
 .react-calendar {
-  width: 350px;
+  width: 500px;
   max-width: 100%;
   background: rgb(255, 255, 255);
   border: 1px solid #a0a096;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', Helvetica, sans-serif;
   line-height: 1.125em;
 }
 .react-calendar--doubleView {
@@ -119,7 +120,7 @@
   /* background-color: #e6e6e6; */
 }
 .react-calendar__tile--now {
-  
+
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {

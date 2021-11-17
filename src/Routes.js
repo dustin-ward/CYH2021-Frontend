@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { HomePage, Home, Contact, About } from "./components";
+import { HomePage, Contact, About } from "./components";
 import UserProfile from "./components/UserProfile";
 import User from "./containers/User.js";
 import Login from "./containers/Login";

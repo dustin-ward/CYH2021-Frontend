@@ -1,9 +1,21 @@
 import React from "react";
+import './All.css';
 
 class About extends React.Component {
   render() {
   return (
-    <div >
+    <div className = "about">
+      <div className = "container">
+      <div className="row align-items-center my-5">
+        <div className="col-lg-7">
+    <img
+      className="img-fluid rounded mb-4 mb-lg-0"
+      src="http://placehold.it/251x251"
+      alt=""
+    />
+    </div>
+    </div>
+    <div>
             <h1 >About</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -11,6 +23,8 @@ class About extends React.Component {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
+            </div>
+            </div>
     </div>
   );}
 }

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:wght@700&display=swap");
+
+* {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+div {
+  /* border: solid green; */
+  margin: 0;
+
+
+}
+
+body {
+  background-image: linear-gradient(to bottom right, rgba(255, 208, 109, 0.8), rgba(109, 229, 255, 0.4));
+  background-repeat: no-repeat;
+}
+
+
+/* .App {
+  border: 0;
+  margin: 0;
+  background-image: linear-gradient(to bottom right, rgba(255, 208, 109, 0.8), rgba(109, 229, 255, 0.4));
+  background-repeat: no-repeat;
+} */
+
+.about {
+  width: 100%;
+  height: 100%;
+}
