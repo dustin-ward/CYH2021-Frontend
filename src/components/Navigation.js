@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
+import "bootstrap/dist/css/bootstrap.css";
 
 // const routes = {
 //   "/about": () => <About />,
