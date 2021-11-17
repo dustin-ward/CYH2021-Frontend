@@ -1,9 +1,6 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Day from "./Day.js";
 import Home from "./Home.js";
-import 'react-calendar/dist/Calendar.css';
 
 export default function HomePage() {
     let navigate = useNavigate();

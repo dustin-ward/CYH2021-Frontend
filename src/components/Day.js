@@ -24,10 +24,16 @@ export default class Day extends React.Component {
         }
     }
 
+    // Convert MySQL date string to JS date obj
+    parseISOString = (s) => {
+        var b = s.split(/\D+/);
+        return new Date(Date.UTC(b[0], --b[1], ++b[2], b[3], b[4], b[5], b[6]));
+    }
+
     render() {
         return (
             <div>
-                <h2>{this.state.day.calendar_date}</h2>
+                <h2>{this.parseISOString(this.state.day.calendar_date).toDateString()}</h2>
                 <h3>Moods</h3>
                 <Moods 
                     day={this.props.day().day}

@@ -42,6 +42,12 @@ export default function Moods(props) {
         return a;
     }
 
+    function sumMoods() {
+        let sum = 0.0;
+        curMoods.forEach(mood => {sum += mood.value.value})
+        return sum;
+    }
+
     function postChanges() {
         let result = curMoods.map(a => a.value);
         console.log("RESULT TO SEND", result)
@@ -80,14 +86,7 @@ export default function Moods(props) {
 
     return (
         <div className='moods'>
-            {
-                // props.moods.map((mood, i) => (
-                //     <div className='mood'>
-                //         <p><img src="http://placehold.it/20x20" alt=""></img> | {mood.mood || "null"}</p>
-                //     </div>
-                // ))
-            }
-
+            <p>Value: {sumMoods()}</p>
             <Select
                 closeMenuOnSelect={false}
                 isMulti
