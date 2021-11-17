@@ -77,7 +77,6 @@ export default function Home() {
   }
 
   const tileClassName = useCallback(({date, view}) => {
-    // return 'moodNeg3'
     let c = 'moodNtrl'
     days.forEach((day) => {
       if(compDates(parseISOString(day.day.calendar_date), date)){
