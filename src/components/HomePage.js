@@ -4,7 +4,6 @@ import Home from "./Home.js";
 
 export default function HomePage() {
     let navigate = useNavigate();
-    const [calVal, setCalVal] = useState(new Date());
 
     const [token, setToken] = useState(localStorage.getItem('token'));
     useEffect(() => {

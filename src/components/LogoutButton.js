@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logout from '../containers/Logout';
 
 function LogoutButton() {
   let token = localStorage.getItem('token');
   if(token === null) {
     return (
-      <Link className="nav-item nav-link" to="/Login">
+      <Link className="nav-item nav-link" to="/login">
         Login!
       </Link>
     );
   } return (
-    <Link className = "nav-item nav-link" to="/Logout" >
-      looogouut
-    </Link>
+    <Logout/>
+    // <Link className = "nav-item nav-link" to="/logout" >
+    //   looogouut
+    // </Link>
   );
 }
 

@@ -4,8 +4,9 @@ import { HomePage, Contact, About } from "./components";
 import UserProfile from "./components/UserProfile";
 import User from "./containers/User.js";
 import Login from "./containers/Login";
+import Logout from "./containers/Logout";
 import Errors from "./containers/Errors";
-import AuthStatus from "./containers/AuthStatus";
+
 
 export default function Routes1() {
   return (
@@ -22,7 +23,7 @@ export default function Routes1() {
           </User>
         }
       />
-      <Route path= "logout" element={<AuthStatus />} />
+      <Route path= "logout" element={<Logout />} />
       <Route path= "*" element={<Errors />} />
     </Routes>
   );
