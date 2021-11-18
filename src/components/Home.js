@@ -116,10 +116,7 @@ export default function Home() {
 
   // Change display if token === null
   return (
-    <div className="Home">
-      <div className="container">
-        <div >
-          <div className="row align-items-center my-5">
+          <div className="row my-5">
             <div className="col-lg-2">
               <p>Left Menu</p>
             </div>
@@ -130,13 +127,10 @@ export default function Home() {
                 tileClassName={tileClassName}
               />
             </div>
-            <div className="col-lg-2">
+            <div className="col">
               <h2>Current Date</h2>
               <Day day={getDateObj} update={getDays}/>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
   )
 }

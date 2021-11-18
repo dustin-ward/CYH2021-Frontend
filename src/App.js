@@ -34,7 +34,7 @@ import './components/All.css';
 function App() {
 
   return (
-    <div className="App">
+    <div className="background">
       <BrowserRouter>
         <Navigation />
         <Routes1 />

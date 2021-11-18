@@ -10,7 +10,7 @@ import './components/All.css';
 
 ReactDOM.render(
     <App />,
-  // <React.StrictMode>
+    // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
   document.getElementById('root')

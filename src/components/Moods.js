@@ -3,6 +3,7 @@ import chroma from "chroma-js"
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
+import Button from "react-bootstrap/Button";
 import makeAnimated from 'react-select/animated';
 import moodOptions from "./MoodOptions.js"
 import usePrevious from "./usePrevious.js";
@@ -87,7 +88,7 @@ export default function Moods(props) {
     }
 
     const colourStyles = {
-        // control: styles => ({ ...styles, backgroundColor: 'white' }),
+        control: styles => ({ ...styles, backgroundColor: 'none' }),
         option: (styles, { data, isDisabled, isFocused, isSelected }) => {
           const color = chroma(data.color);
           return {
@@ -111,9 +112,9 @@ export default function Moods(props) {
                 components={animatedComponents}
                 styles={colourStyles}
             />
-            <button onClick={postChanges}>
+            <Button onClick={postChanges}>
                 Save
-            </button>
+            </Button>
         </div>
     )
 }

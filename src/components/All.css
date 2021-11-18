@@ -5,11 +5,6 @@
   font-weight: 700;
 }
 
-/* div {
-  border: solid green;
-  margin: 0;
-} */
-
 html {
   margin: 0;
   height: 100%;
@@ -23,6 +18,15 @@ body {
   background-image: linear-gradient(to bottom right, rgba(255, 208, 109, 0.8), rgba(109, 229, 255, 0.4)) !important;
   background-repeat: no-repeat;
 }
+
+.calDiv {
+  
+}
+
+/* div {
+  border: solid green;
+  margin: 0;
+} */
 
 .App {
   border: 0;
