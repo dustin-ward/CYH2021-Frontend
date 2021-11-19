@@ -42,6 +42,22 @@ body {
   background: none;
 }
 
+.cow {
+  content:url("../MoodzLogoWhite.png");
+  width: 90.16px;
+  height: 66.36px;
+  padding: 0px 0px;
+  margin: 0 0 0 0;
+}
+
+.navbar-brand {
+  margin-right: 0rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
 /* .about {
   width: 100%;
   height: 100%;

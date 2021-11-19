@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
+import "./All.css";
 import "bootstrap/dist/css/bootstrap.css";
+
 
 // const routes = {
 //   "/about": () => <About />,
@@ -52,8 +54,11 @@ export default function Navigation() {
     <div className="Navigation">
       <nav className="navbar navbar-expand navbar-dark bg-dark" >
         <Link className="navbar-brand" to="/">
-      {/*could add <img src> here*/}
-          Moodz
+        Moodz
+        <img
+          className="cow navbar-brand"
+          alt="MoodzLogo"
+          />
         </Link>
         <div className="container">
           <ul className="navbar-nav mr-auto">
