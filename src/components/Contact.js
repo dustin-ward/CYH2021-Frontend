@@ -6,20 +6,18 @@ function Contact() {
     <div className="contact">
       <div className="container">
         <div className="row align-items-center my-5">
-          <div className="col-lg-7">
-            <img
-              className="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div className="col-lg-5">
+          <div className="col-lg-12">
             <h1 className="font-weight-light">Contact</h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              This mental health web application was created by Dustin Ward and
+              Julie Wojtiw-Quo. You can find the source code here:
+              <br/><a href="" >Front End</a>
+              <br/><a href="" >Back End</a>
+              <br/><br/> External tools used included:
+                React, Node.js MySQL, GoLang and JWT
+                <br /> React Libraries include react-bootstrap, react-router-dom,
+                and Axios
+                <br/> Open source photos from <a href="http://www.pexels.com"> Pexels </a>
             </p>
           </div>
         </div>

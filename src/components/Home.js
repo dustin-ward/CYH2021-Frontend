@@ -116,21 +116,22 @@ export default function Home() {
 
   // Change display if token === null
   return (
-          <div className="row my-5">
-            <div className="col-lg-2">
-              <p>Left Menu</p>
-            </div>
-            <div className="col-lg-6">
-              <Calendar
-                onChange={setCalVal}
-                value={calVal}
-                tileClassName={tileClassName}
-              />
-            </div>
-            <div className="col">
-              <h2>Current Date</h2>
-              <Day day={getDateObj} update={getDays}/>
-            </div>
-        </div>
+    <div className="row my-5">
+      <div className="col-lg-1">
+      </div>
+      <div className="col-lg-6">
+        <Calendar
+          onChange={setCalVal}
+          value={calVal}
+          tileClassName={tileClassName}
+        />
+      </div>
+      <div className="col">
+        <h2>Current Date</h2>
+        <Day day={getDateObj} update={getDays}/>
+      </div>
+      <div className="col-lg-1">
+      </div>
+    </div>
   )
 }

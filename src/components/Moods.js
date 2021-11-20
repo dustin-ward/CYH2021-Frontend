@@ -102,7 +102,6 @@ export default function Moods(props) {
 
     return (
         <div className='moods'>
-            <p>Value: {sumMoods()}</p>
             <Select
                 closeMenuOnSelect={false}
                 isMulti
@@ -112,6 +111,7 @@ export default function Moods(props) {
                 components={animatedComponents}
                 styles={colourStyles}
             />
+            <br/>
             <Button onClick={postChanges}>
                 Save
             </Button>

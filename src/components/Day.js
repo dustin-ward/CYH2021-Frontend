@@ -35,7 +35,7 @@ export default class Day extends React.Component {
             <div>
                 <h2>{this.parseISOString(this.state.day.calendar_date).toDateString()}</h2>
                 <h3>Moods</h3>
-                <Moods 
+                <Moods
                     day={this.props.day().day}
                     moods={this.props.day().moods}
                     tasks={this.props.day().tasks}
@@ -44,6 +44,7 @@ export default class Day extends React.Component {
                 {/* {this.state.moods.map(function(mood, i){
                     return <Mood mood={mood.mood}/>;
                 })} */}
+                <br/>
                 <h3>Tasks</h3>
                 {this.state.tasks && this.state.tasks.map(function(task, i){
                     return (

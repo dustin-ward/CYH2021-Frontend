@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Home from "./Home.js";
 import Moodz from '../MoodzLogo.png';
+import People from '../pexels-helena-lopes-708392.jpg';
 
 export default function HomePage() {
     let navigate = useNavigate();
@@ -14,19 +15,18 @@ export default function HomePage() {
 
     return (
       <div className="Home">
-        <div className="container">
             {token != null &&
               <Home />
             }
             {token == null &&
-              <div>
-                <div className="row align-items-center my-5">
+              <div className="container">
+                <div className="row  mt-5">
                   <div className="col-lg-5">
-                    <img
-                      src={Moodz}
-                      className="img-fluid rounded mb-4 mb-lg-0"
-                      alt="MoodzLogo"
-                      />
+                      <img
+                        src={People}
+                        className="img-fluid rounded mb-4 mb-lg-0"
+                        alt="Happy People"
+                        />
                   </div>
                   <div className="col-lg-7">
                     <h1 >Home </h1> {token}
@@ -39,10 +39,8 @@ export default function HomePage() {
                     mental health! </p>
                   </div>
                 </div>
-                <div className="row align-items-end">
-                  <div className="col-lg-5"></div>
-                  <div className="col float-right">
-                    <p> This application is not currently intended to
+                <div className="row-lg-12 my-5">
+                  <p> This application is not currently intended to
                     replace any advice from a medical professional. If you
                     need medical assistance, please reach out to your health
                     care provider or other appropraite health care services.
@@ -50,13 +48,15 @@ export default function HomePage() {
                     In Alberta, you can visit <a href="https://www.
                     ahs.ca/amh"> Alberta Health Services </a> or call the
                     Mental Health Helpline at <mark>1-877-303-2642</mark>
-                     for a listing of services in your area.
-                    </p>
-                  </div>
+                    for a listing of services in your area. Across Canada, you
+                    can also find helpful information on the
+                    <a href="https://cmha.ca/find-info/
+                    mental-health/general-info/"> Canadian Mental
+                    Health Association </a> website.
+                  </p>
                 </div>
               </div>
             }
-        </div>
       </div>
     )
 }

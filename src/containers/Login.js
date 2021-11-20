@@ -33,7 +33,7 @@ export default function Login() {
 
     })
     .catch(function (error) {
-      alert(error);
+      // alert(error);
       setErr(error.response.status) ;
       console.log(error.response.data);
       console.log(error.response.status);
@@ -46,7 +46,7 @@ export default function Login() {
     if (from !== "/" && "/about") {
       return( <p> You must log in to view {from} </p>);
     }
-    return (<p> Hi! </p>);
+    return (<p> </p>);
   }
 
   function Alert() {
@@ -67,29 +67,38 @@ export default function Login() {
 
   return (
     <div> <Prior />
+    <div className="row align-items-center mt-5">
+    <div className="col text-center">
+        <h1 className="font-weight-light">Login</h1>
+    </div>
+    </div>
 
-    <div className="Login">
+    <div className="Login mt-0">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
           <Form.Control
+            placeholder="Email"
             autoFocus
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
+        <br/>
         <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
           <Form.Control
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
+        <br/>
+        <div class="d-flex justify-content-center">
+          <Button block size="lg" type="submit" disabled={!validateForm()}>
+            Login
+            </Button>
+        </div>
       </Form>
       </div>
       <div> <Alert />
